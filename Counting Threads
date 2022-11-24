@@ -1,0 +1,21 @@
+class CountThreadTest extends Thread
+{
+    int from, to;
+    public CountThreadTest(int from, int  to) {
+        this.from = from;
+        this.to = to;
+    }
+    //the  run() method is like main() for  a  thread
+    public synchronized void run()
+    {
+        System.out.println("A New  Thread has  Started\n");
+        for(int i=from; i<to; i++) {System.out.println("i == "  +    i); }}
+    public static void main(String[] args)
+    {//spawn 3  threads, each of  which counts 10  numbers II to  see  2nd thread starting before 1st  finishes II generates
+//t(0, 2000), t1(0, 10), t2(0,20)
+        for  (int i=0; i<3; i++)
+        {
+            CountThreadTest t  =    new  CountThreadTest(i*10, (i+1)*10);
+//starting a  thread will launch a  separate sequence II of  control and  execute the  run() method of  the thread
+            t.start(); }}
+}

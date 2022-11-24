@@ -1,0 +1,43 @@
+public class SchildtOverload {
+    void ovlDemo()
+    {
+        System.out.println("No parameters.");
+    }
+
+    void ovlDemo(int a)
+    {
+        System.out.println("one parameter : " + a);
+    }
+
+    int ovlDemo(int a, int b)
+    {
+        System.out.println("Two parameters" +a + " " +b);
+        return a+b;
+    }
+
+    double ovlDemo(double a, double b)
+    {
+        System.out.println("Two double parameters" + a + " " +b);
+    return a+b;
+    }
+}
+
+class OverloadDemo
+{
+    public static void main(String[] args) {
+        SchildtOverload ob = new SchildtOverload();
+        int resI;
+        double resD;
+
+        ob.ovlDemo();
+        System.out.println();
+
+        resI= ob.ovlDemo(4,6);
+        System.out.println("Result of ob.ovldemo(4,6)");
+
+        resD= ob.ovlDemo(1.1,2.32);
+        System.out.println("Result of ob.ovlDemo");
+
+
+    }
+}
